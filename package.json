@@ -1,6 +1,6 @@
 {
   "name": "directory-tree-promise",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Asynchronously return a directory tree as a JS object",
   "license": "MIT",
   "author": "Danny Navarro (dannynavarro.tech)",
