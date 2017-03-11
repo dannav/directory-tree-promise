@@ -1,4 +1,4 @@
-##directory-tree-promise
+##directory-tree-promise [![Build Status](https://travis-ci.org/dannav/directory-tree-promise.svg?branch=master)](https://travis-ci.org/dannav/directory-tree-promise)
 
 ### Install
 ```
