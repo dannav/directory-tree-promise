@@ -5,7 +5,7 @@ const testDir = `${process.cwd()}${path.sep}test${path.sep}src`
 
 describe('fs-directory-tree', () => {    
   it('should always return an object', async () => {
-    const tree = await directoryTree('./example')
+    const tree = await directoryTree(testDir)
     expect(tree).to.be.an('object')    
   })
 
