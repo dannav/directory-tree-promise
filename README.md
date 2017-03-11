@@ -10,7 +10,7 @@ Use async await while traversing a directory tree.
 
 ```js
   const {directoryTree} = require('../lib/directory-tree')
-  const tree = directoryTree('./example')
+  const tree = await directoryTree('./example')
 ```
 
 Output of `tree`:
@@ -40,7 +40,7 @@ You can also pass an async function as a second parameter to modify the object r
 
 ```js
   const {directoryTree} = require('../lib/directory-tree')
-  const tree = directoryTree('./example', async file => {
+  const tree = await directoryTree('./example', async file => {
     file.content = await someFunctionToReadFileData(file.path)
     return file
   })
@@ -63,7 +63,7 @@ Each object in the tree is extended with a function isFile
 
 ```js
   const {directoryTree} = require('../lib/directory-tree')
-  const tree = directoryTree(process.cwd())
+  const tree = await directoryTree(process.cwd())
   tree.children[0].isFile() // true or false
 ```
 
