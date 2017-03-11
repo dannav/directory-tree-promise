@@ -1,0 +1,37 @@
+{
+  "name": "directory-tree-promise",
+  "version": "1.0.0",
+  "description": "Asynchronously return a directory tree as a JS object",  
+  "license": "MIT",
+  "author": "Danny Navarro (dannynavarro.tech)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dannav/directory-tree-promise.git"
+  },
+  "keywords": [
+    "directory",
+    "tree",
+    "async",
+    "promise",
+    "dir",
+    "recursive"
+  ],
+  "bugs": {
+    "url": "https://github.com/dannav/directory-tree-promise/issues"
+  },
+  "homepage": "https://github.com/dannav/directory-tree-promise",
+  "main": "lib/directory-tree.js",
+  "scripts": {
+    "test": "mocha ./test/test.js"
+  },
+  "engines": {
+    "node": ">=7.7.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "fs-promise": "^2.0.0"
+  }
+}
