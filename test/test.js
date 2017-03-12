@@ -1,6 +1,6 @@
 const path = require('path')
 const {expect} = require('chai')
-const {directoryTree} = require('../lib/directory-tree')
+const directoryTree = require('../lib/directory-tree')
 const testDir = `${process.cwd()}${path.sep}test${path.sep}src`
 
 describe('fs-directory-tree', () => {    
