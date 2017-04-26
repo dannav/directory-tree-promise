@@ -1,6 +1,6 @@
 {
   "name": "directory-tree-promise-n6",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Asynchronously return a directory tree as a JS object; forked from dannav/directory-tree-promise to support Node 6.",
   "license": "MIT",
   "author": "Danny Navarro (dannynavarro.tech)",
