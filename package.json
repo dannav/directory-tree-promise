@@ -1,12 +1,16 @@
 {
-  "name": "directory-tree-promise",
+  "name": "directory-tree-promise-n6",
   "version": "1.0.4",
-  "description": "Asynchronously return a directory tree as a JS object",
+  "description": "Asynchronously return a directory tree as a JS object; forked from dannav/directory-tree-promise to support Node 6.",
   "license": "MIT",
   "author": "Danny Navarro (dannynavarro.tech)",
+  "contributors": [
+    "Danny Navarro (dannynavarro.tech)",
+    "Ethan Brown (ethan.brown@popart.com)"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/dannav/directory-tree-promise.git"
+    "url": "https://github.com/EthanRBrown/directory-tree-promise"
   },
   "keywords": [
     "directory",
@@ -17,17 +21,21 @@
     "recursive"
   ],
   "bugs": {
-    "url": "https://github.com/dannav/directory-tree-promise/issues"
+    "url": "https://github.com/EthanRBrown/directory-tree-promise/issues"
   },
-  "homepage": "https://github.com/dannav/directory-tree-promise",
-  "main": "lib/directory-tree.js",
+  "homepage": "https://github.com/EthanRBrown/directory-tree-promise",
+  "main": "dist/directory-tree.js",
   "scripts": {
-    "test": "mocha ./test/test.js"
+    "test": "mocha ./test/test.js",
+    "dist": "babel lib -d dist --source-maps"
   },
   "engines": {
-    "node": ">=7.7.2"
+    "node": ">=6.10.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.4.0",
     "chai": "^3.5.0",
     "mocha": "^3.2.0"
   },
