@@ -1,4 +1,4 @@
-##directory-tree-promise [![Build Status](https://travis-ci.org/dannav/directory-tree-promise.svg?branch=master)](https://travis-ci.org/dannav/directory-tree-promise)
+## directory-tree-promise [![Build Status](https://travis-ci.org/dannav/directory-tree-promise.svg?branch=master)](https://travis-ci.org/dannav/directory-tree-promise)
 
 ### Install
 ```
@@ -71,7 +71,7 @@ Each object in the tree is extended with a function isFile
 Device, FIFO and socket files are ignored.
 
 ### Contributing
-Fork this repository and run `npm install` in project directory.
+Fork this repository and run `npm install` in project directory.  Before versioning and publishing, run `npm dist` to transcompile for Node 6 support.
 
 #### Tests
 `npm run test`
