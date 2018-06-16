@@ -22,7 +22,7 @@ var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var fs = require('fs-promise');
+var fs = require('fs-extra');
 var nPath = require('path');
 
 var itemType = function itemType(stat) {
@@ -44,7 +44,7 @@ var Item = {
 };
 
 var directoryTree = function () {
-  var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2() {
+  var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2() {
     var path = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : __dirname;
     var onEachFile = arguments[1];
     var name, item, stat, recurse, setChildren;
@@ -92,7 +92,7 @@ var directoryTree = function () {
 
             recurse = function recurse(child) {
               return new _promise2.default(function () {
-                var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(res, rej) {
+                var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(res, rej) {
                   var i;
                   return _regenerator2.default.wrap(function _callee$(_context) {
                     while (1) {
