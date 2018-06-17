@@ -1,9 +1,5 @@
 'use strict';
 
-var _assign = require('babel-runtime/core-js/object/assign');
-
-var _assign2 = _interopRequireDefault(_assign);
-
 var _keys = require('babel-runtime/core-js/object/keys');
 
 var _keys2 = _interopRequireDefault(_keys);
@@ -37,12 +33,6 @@ var itemType = function itemType(stat) {
   return '';
 };
 
-var Item = {
-  isFile: function isFile() {
-    return !!undefined.extension;
-  }
-};
-
 var directoryTree = function () {
   var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2() {
     var path = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : __dirname;
@@ -61,34 +51,37 @@ var directoryTree = function () {
           case 5:
             stat = _context2.sent;
             _context2.t0 = itemType(stat);
-            _context2.next = _context2.t0 === 'file' ? 9 : _context2.t0 === 'dir' ? 16 : 33;
+            _context2.next = _context2.t0 === 'file' ? 9 : _context2.t0 === 'dir' ? 17 : 35;
             break;
 
           case 9:
             item.extension = nPath.extname(item.path).toLowerCase();
             item.size = stat.size;
+            item.isFile = true;
 
             if (!(onEachFile && typeof onEachFile === 'function')) {
-              _context2.next = 15;
+              _context2.next = 16;
               break;
             }
 
-            _context2.next = 14;
+            _context2.next = 15;
             return onEachFile(item);
 
-          case 14:
+          case 15:
             item = _context2.sent;
 
-          case 15:
-            return _context2.abrupt('break', 34);
-
           case 16:
-            _context2.prev = 16;
-            _context2.next = 19;
+            return _context2.abrupt('break', 36);
+
+          case 17:
+            _context2.prev = 17;
+            _context2.next = 20;
             return fs.readdir(path);
 
-          case 19:
+          case 20:
             item.children = _context2.sent;
+
+            item.isFile = false;
 
             recurse = function recurse(child) {
               return new _promise2.default(function () {
@@ -134,10 +127,10 @@ var directoryTree = function () {
                 return c;
               });
             });
-            _context2.next = 24;
+            _context2.next = 26;
             return _promise2.default.all(setChildren);
 
-          case 24:
+          case 26:
             item.children = _context2.sent;
 
             item.children = item.children.filter(function (i) {
@@ -146,38 +139,38 @@ var directoryTree = function () {
             item.size = item.children.reduce(function (prev, cur) {
               return prev + cur.size;
             }, 0);
-            _context2.next = 32;
+            _context2.next = 34;
             break;
 
-          case 29:
-            _context2.prev = 29;
-            _context2.t1 = _context2['catch'](16);
-            return _context2.abrupt('return', {});
-
-          case 32:
-            return _context2.abrupt('break', 34);
-
-          case 33:
+          case 31:
+            _context2.prev = 31;
+            _context2.t1 = _context2['catch'](17);
             return _context2.abrupt('return', {});
 
           case 34:
-            _context2.next = 39;
-            break;
+            return _context2.abrupt('break', 36);
+
+          case 35:
+            return _context2.abrupt('return', {});
 
           case 36:
-            _context2.prev = 36;
+            _context2.next = 41;
+            break;
+
+          case 38:
+            _context2.prev = 38;
             _context2.t2 = _context2['catch'](2);
             return _context2.abrupt('return', {});
 
-          case 39:
-            return _context2.abrupt('return', (0, _assign2.default)(item, Item));
+          case 41:
+            return _context2.abrupt('return', item);
 
-          case 40:
+          case 42:
           case 'end':
             return _context2.stop();
         }
       }
-    }, _callee2, undefined, [[2, 36], [16, 29]]);
+    }, _callee2, undefined, [[2, 38], [17, 31]]);
   }));
 
   return function directoryTree() {
